@@ -1,8 +1,9 @@
 import Debug "mo:base/Debug"
 // create a DBank canister, a container that is able to persist a record of state changes
 actor DBank {
-  var currentValue = 300;
-  currentValue := 100;
+  // add orthogonal persistance using stable var
+  stable var currentValue = 300;
+  // currentValue := 100;
 
   let id = 293874298347;
   // Debug.print(debug_show(id));
@@ -19,7 +20,7 @@ actor DBank {
     let tempValue: Int = currentValue - amount;
     if (tempValue >= 0) {
     currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+    // Debug.print(debug_show(currentValue));
     } else {
       Debug.print("Amount too large, curentValue should be greater than zero.")
     }
