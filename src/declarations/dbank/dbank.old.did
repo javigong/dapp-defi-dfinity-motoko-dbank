@@ -1,5 +1,6 @@
 service : {
   checkBalance: () -> (nat) query;
+  checkTime: () -> (int) query;
   topUp: (nat) -> () oneway;
   widthdrawl: (nat) -> () oneway;
 }
