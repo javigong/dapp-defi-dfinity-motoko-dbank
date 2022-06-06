@@ -6,10 +6,12 @@ import Float "mo:base/Float";
 actor DBank {
   // add orthogonal persistance using stable var
   stable var currentValue: Float = 300;
-  // currentValue := 100;
+  currentValue := 300;
+  Debug.print(debug_show(currentValue));
 
   // create a stable var to start time in nanoseconds
   stable var startTime = Time.now();
+  startTime := Time.now();
   Debug.print(debug_show(startTime));
 
   let id = 293874298347;
@@ -23,7 +25,7 @@ actor DBank {
   };
 
   // update method to width-drawl from balance
-  public func widthdrawl(amount: Float) {
+  public func withdraw(amount: Float) {
     let tempValue: Float = currentValue - amount;
     if (tempValue >= 0) {
     currentValue -= amount;
